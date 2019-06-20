@@ -21,10 +21,10 @@ namespace E_Commerce.Models
         
 
         public bool Block { get; set; }
-        //[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         [StringLength(50, MinimumLength = 1)]
         public string FirstName { get; set; }
-        //[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         [StringLength(50, MinimumLength = 1)]
         public string LastName { get; set; }
 
@@ -49,8 +49,8 @@ namespace E_Commerce.Models
             return new ApplicationDbContext();
         }
         //Dbset 
-       // public virtual DbSet<Seller> Sellers { get; set; }
-        //public virtual DbSet<Admin> Admins { get; set; }
+        public virtual DbSet<Seller> Sellers { get; set; }
+        public virtual DbSet<Admin> Admins { get; set; }
 
         public virtual DbSet<Category> Categorys { get; set; }
         public virtual DbSet<Product> Products { get; set; }
